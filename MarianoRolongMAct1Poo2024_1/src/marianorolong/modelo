@@ -1,0 +1,271 @@
+@startuml
+
+class Agencia{
+    - int id;
+  -String nombre;
+  -List<Cliente>Clientes;
+  +Agencia();
+  +getNombre();
+  +setNombre()
+  +getClientes();
+  
+}
+Class Persona {
+    - int id;
+    -String nombre;
+    -String apellido;
+    -String numeroTelefono;
+    -String direccion;
+    -String identifiacion;
+    -Cliente cliente;
+    +Persona();
+    +getNombre();
+    +setNombre();
+    +getApellido();
+    +setApellido();
+    +getnumeroTelefono();
+    +setnumeroTelefono();
+    +getDireccion();
+    +setDireccion();
+    +getIdentificacion();
+    +setIdentificacion();
+    +getCliente();
+    +setCliente();
+    
+}
+
+class Cliente {
+    - int id;
+    - String codigoCliente; 
+    - String nombre;
+    - String direccion; 
+    - String telefono;
+    - String personaContacto;
+    - String tipoDeActividad;
+    - List<Casting> Castings;
+    - Agencia agencia;
+    - Persona persona;
+    +Cliente();
+    +getCodigoCliente();
+    +setCodigoCliente();
+    +getNombre();
+    +setNombre();
+    +getDireccion();
+    +setDireccion();
+    +getTelefono();
+    +setTelefono();
+    +getPersonaContacto();
+    +setPersonaContacto();
+    +getTipoDeActividad();
+    +setTipoDeActividad();
+    +getCastings;
+    +getAgencia();
+    +getPersona();
+}
+
+class Casting {
+    - int id;
+    - String codigoCasting;
+    - String nombre; 
+    - String descripcion;
+    - Date fechaContratacion; 
+    - Int costo; 
+    - String tipo; 
+    - Cliente cliente;
+    - List<Candidato> Candidatos;
+    +Casting();
+    +getCodigoCasting();
+    +setCodigoCasting();
+    +getNombre();
+    +setNombte();
+    +getDescripcion();
+    +setDescripcion();
+    +getfechaContratacion();
+    +getCosto();
+    +setCosto();
+    +getTipo();
+    +setTipo();
+    +getCliente();
+    +setCliente();
+    +getCandidatos(),
+    
+    
+}
+
+class Fase {
+    - int id;
+    - Int numeroIdentificacion; 
+    - Date fechaInicio; 
+    - List<Prueba> Pruebas;
+    - CastingPresencial castingPresencial;
+    +Fase();
+    +getNumeroIdentificacion();
+    +setNumeroIdentificacion();
+    +getFechaInicio();
+    +setFechaInicio();
+    +getPruebas();
+    +getCastingPresencial();
+    
+}
+
+class Prueba {
+    - int id;
+    - Int numero; 
+    - Date fecha; 
+    - String sala; 
+    - String descripcion;
+    - Fase fase;
+    - List <Candidato> candidatos;
+    +Prueba();
+    +getNumero();
+    +setNumero();
+    +getFecha();
+    +setFecha();
+    +getSala();
+    +setSala();
+    +getDescripcion();
+    +setDescripcion();
+    +getFase();
+    +getCandidatos();
+  
+}
+
+class CastingPresencial {
+    - int id;
+    - Int numeroPersonasRequeridas; 
+    - AgenteCasting agenteCasting;
+    - List<fase> fases;
+    +CastingPresencial();
+    +getNumeroPersonasRequeridas();
+    +setNumeroPersonasRequeridas();
+    +getAgenteCasting();
+    +getFases();
+    
+    
+}
+
+class AgenteCasting {
+    - int id;
+    - String numeroEmpleado;
+    - CastingPresencial castingPresencial;
+    +AgenteCasting();
+    +getNumeroEmpleado();
+    +setNumeroEmpleado();
+    +gerCastingPresencial();
+
+}
+
+
+class Candidato {
+    - int id;
+    - String codigo;
+    - Date fechaNacimiento; 
+    - String fotografia;
+    - String provincia;
+    - String sexo; 
+    - Float altura; 
+    - Int edad; 
+    - String colorPelo; 
+    - String colorOjos;
+    - String especialidad;
+    - List<Experiencia> Experiencias;
+    - Casting casting;
+    - Prueba prueba;
+    +Candidato();
+    +getCodigo();
+    +setCodigo();
+    +getFechaNacimiento();
+    +setFechaNacimiento();
+    +getFotografia();
+    +setFotografia();
+    +getPorvincia();
+    +setProvincia();
+    +getSexo();
+    +setSexo();
+    +getAltura();
+    +setAltura();
+    +getEdad();
+    +setEdad();
+    +getColorPelo();
+    +setColorPelo();
+    +getColorOjos();
+    +setColorOjos();
+    +getEspecialidad();
+    +setEspecialidad();
+    +getExperiencias();
+    +getCasting();
+    +getPrueba();
+    
+    
+}
+
+class Tutor {
+    - int id;
+    -String nombreTutor;
+    -CandidatoNino candidatoNino;
+    +Tutor();
+    +getNombreTutor();
+    +setNombreTutor();
+    +getCandidatoNino();
+}
+
+class Experiencia {
+    - int id;
+    -String nombre;
+    -String descripcion;
+    -Int mesesExperiencia;
+    -Candidato candidato;
+    +Experiencia();
+    +getNombre();
+    +setNombre();
+    +getDescripcion();
+    +setDescripcion();
+    +getMesesExperiencia();
+    +setMesesExperiencia();
+    +getCandidato();
+}
+
+class Representante {
+    - int id;
+    +Representante();
+    
+}
+
+class CandidatoAdulto{
+    - int id;
+    +CandidatoAdulto();
+
+}
+
+class CandidatoNino{
+    - int id;
+    - String nombreTutor;
+    - Tutor tutor;
+    +CandidatoNino();
+    +getNombreTutor();
+    +setNombreTutor();
+    +getTutor();
+    
+}
+
+
+Persona   <|--  Candidato
+Persona   <|--  AgenteCasting
+Persona "1" *-- "1" Cliente: es un
+Candidato <|-- CandidatoNino
+Candidato "1" -- "1..*" Experiencia: puede tener
+Candidato "*" -- "1" Casting: puede tener
+Candidato <|-- CandidatoAdulto
+CandidatoNino "1" *-- "1" Tutor: debe tener
+Casting  <|-- CastingPresencial: herencia casting
+CastingPresencial "1" -- "*" Fase: cuenta con
+Agencia "1" -- "*" Cliente: varios
+AgenteCasting "1" *-- "1" CastingPresencial: se nesecita
+Cliente "1" -- "*" Casting: Contratar
+Fase "1" -- "*" Prueba: varias pruebas
+Representante o-- CandidatoNino
+Representante o-- CandidatoAdulto
+Representante --|> Persona
+Prueba "*" -- "1" Candidato: pasa por 
+
+@enduml

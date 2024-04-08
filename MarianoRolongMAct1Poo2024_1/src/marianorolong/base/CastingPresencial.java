@@ -27,6 +27,14 @@ public class CastingPresencial {
         this.fases.add(fases);
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getNumeroPersonasRequeridas() {
         return numeroPersonasRequeridas;
     }

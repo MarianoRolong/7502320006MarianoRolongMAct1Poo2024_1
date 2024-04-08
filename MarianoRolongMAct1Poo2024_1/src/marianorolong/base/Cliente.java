@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author maria
  */
-class Cliente {
+public class Cliente {
     //PROPIEDADES
     private int id;
     private String codigoCliente; 

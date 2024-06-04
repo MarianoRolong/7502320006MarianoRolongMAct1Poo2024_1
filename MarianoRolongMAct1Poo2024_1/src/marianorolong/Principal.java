@@ -4,6 +4,10 @@
  */
 package marianorolong;
 
+import marianorolong.Ventanas.VentanaPrincipal;
+
+
+
 /**
  *
  * @author maria
@@ -14,8 +18,11 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("Hola"); 
+       VentanaPrincipal ventana = new VentanaPrincipal();
+      // ventana.setLocationRelativeTo(null);
+      ventana.setExtendedState(VentanaPrincipal.MAXIMIZED_BOTH);
+       ventana.setVisible(true);
+               
     }
     
 }

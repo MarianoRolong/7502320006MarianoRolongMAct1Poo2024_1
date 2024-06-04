@@ -4,6 +4,8 @@
  */
 package marianorolong.base;
 
+import java.util.*;
+
 /**
  *
  * @author maria
@@ -11,11 +13,13 @@ package marianorolong.base;
 public class Persona {
     //PROPIEDADES
     private int id;
-    private String nombre;
-    private String apellido;
-    private String numeroTelefono;
-    private String direccion;
-    private String identifiacion;
+    public String nombre;
+    public String apellido;
+    public String numeroTelefono;
+    public String direccion;
+    public String identificacion;
+    public String clave;
+    public static HashMap<String, Persona> usuariosBD;
     
 public Persona(){
     
@@ -26,7 +30,7 @@ public Persona(){
         this.apellido = apellido;
         this.numeroTelefono = numeroTelefono;
         this.direccion = direccion;
-        this.identifiacion = identifiacion;
+        this.identificacion = identifiacion;
     }
 
     public String getNombre() {
@@ -59,15 +63,15 @@ public Persona(){
     }
 
     public String getIdentifiacion() {
-        return identifiacion;
+        return identificacion;
     }
     public void setIdentifiacion(String identifiacion) {
-        this.identifiacion = identifiacion;
+        this.identificacion = identifiacion;
     }
 
     @Override
     public String toString() {
-        return "Persona{" + "\n Nombre: " + nombre + ", \n Apellido: " + apellido + ", \n NumeroTelefono: " + numeroTelefono + ", Direccion: " + direccion + ", \n Identifiacion: " + identifiacion + '}';
+        return "Persona{" + "\n Nombre: " + nombre + ", \n Apellido: " + apellido + ", \n NumeroTelefono: " + numeroTelefono + ", Direccion: " + direccion + ", \n Identifiacion: " + identificacion + ", \n Clave: " + clave +'}';
     }
 
     

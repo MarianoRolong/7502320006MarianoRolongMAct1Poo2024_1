@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package marianorolong.Ventanas;
+package marianorolong.Ventanas.Usuarios;
 
 import java.awt.Color;
 import java.util.Map;
@@ -223,7 +223,7 @@ public class VentanaLogin extends javax.swing.JDialog {
     
     }else{
         textMensaje.setForeground(Color.red);
-       JOptionPane.showMessageDialog(this, "Acceso negado");
+       JOptionPane.showMessageDialog(this, "Acceso denegado");
         campoIdentificacionInicioSesion.setText("");
         campoPasswordInicioSesion.setText("");
     }

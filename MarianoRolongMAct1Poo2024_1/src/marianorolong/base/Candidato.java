@@ -5,6 +5,7 @@
 package marianorolong.base;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -13,20 +14,21 @@ import java.util.List;
  */
 public class Candidato {
     //PROPIEDADES
-    private int id;
-    private String codigo;
-    private Date fechaNacimiento; 
-    private String fotografia;
-    private String provincia;
-    private String sexo; 
-    private Float altura; 
-    private int edad; 
-    private String colorPelo; 
-    private String colorOjos;
-    private String especialidad;
-    private List<Experiencia> experiencias;
-    private Casting casting;
-    private Prueba prueba;
+    public int id;
+    public String codigo;
+    public Date fechaNacimiento; 
+    public String fotografia;
+    public String provincia;
+    public String sexo; 
+    public String altura; 
+    public int edad; 
+    public String colorPelo; 
+    public String colorOjos;
+    public String especialidad;
+    public String experiencia;
+    public Casting casting;
+    public Prueba prueba;
+    public static HashMap<String, Candidato> candidatosBD;
     
 //CONSTRUCTORES
     public Candidato (){
@@ -39,12 +41,12 @@ public class Candidato {
         this.fotografia = fotografia;
         this.provincia = provincia;
         this.sexo = sexo;
-        this.altura = altura;
+        //this.altura = altura;
         this.edad = edad;
         this.colorPelo = colorPelo;
         this.colorOjos = colorOjos;
         this.especialidad = especialidad;
-        this.experiencias.add(experiencias);
+        //this.experiencias.add(experiencias);
         this.casting = casting;
         this.prueba = prueba;
     }
@@ -84,12 +86,15 @@ public class Candidato {
         this.sexo = sexo;
     }
 
-    public Float getAltura() {
+    public String getAltura() {
         return altura;
     }
-    public void setAltura(Float altura) {
+
+    public void setAltura(String altura) {
         this.altura = altura;
     }
+
+   
 
     public int getEdad() {
         return edad;
@@ -119,8 +124,12 @@ public class Candidato {
         this.especialidad = especialidad;
     }
 
-    public List<Experiencia> getExperiencias() {
-        return experiencias;
+    public void setExperiencia(String experiencia) {
+        this.experiencia = experiencia;
+    }
+
+    public String getExperiencia() {
+        return experiencia;
     }
 
     public Casting getCasting() {

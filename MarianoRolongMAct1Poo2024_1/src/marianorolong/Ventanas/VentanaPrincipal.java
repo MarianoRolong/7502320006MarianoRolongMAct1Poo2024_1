@@ -4,7 +4,13 @@
  */
 package marianorolong.Ventanas;
 
+import marianorolong.Ventanas.Usuarios.VentanaUsuarios;
+import marianorolong.Ventanas.Usuarios.VentanaLogin;
+import marianorolong.Ventanas.Usuarios.VentanaReporteUsuarios;
+import marianorolong.Ventanas.Candidatos.VentanaCandidato;
 import javax.swing.JOptionPane;
+import marianorolong.Ventanas.Candidatos.VentanaReporteCandidatos;
+import marianorolong.base.Candidato;
 import marianorolong.base.Persona;
 
 /**
@@ -42,15 +48,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         itemReportesUsuarioTodos = new javax.swing.JMenuItem();
         itemReportesUsuarioPorNombre = new javax.swing.JMenuItem();
         itemReportesUsuarioPorTelefono = new javax.swing.JMenuItem();
-        itemAgregarClientes = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        itemConsultarClientes = new javax.swing.JMenuItem();
-        itemEditarClientes = new javax.swing.JMenuItem();
-        itemEliminarClientes = new javax.swing.JMenuItem();
-        jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        jMenu6 = new javax.swing.JMenu();
-        itemReportesClientePorNombre = new javax.swing.JMenuItem();
-        itemReportesClientePorActividad = new javax.swing.JMenuItem();
         menuCandidato = new javax.swing.JMenu();
         itemAgregarCandidato = new javax.swing.JMenuItem();
         itemConsultarCandidatos = new javax.swing.JMenuItem();
@@ -58,9 +55,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         itemEliminarCandidatos = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         itemReportesCandidatoPorNombres = new javax.swing.JMenu();
+        itemReportesCandidatoTodos = new javax.swing.JMenuItem();
         jMenuItem19 = new javax.swing.JMenuItem();
         itemReportesCandidatoPorEdad = new javax.swing.JMenuItem();
-        itemReportesCandidatoPorEspecialidad = new javax.swing.JMenuItem();
         menuCasting = new javax.swing.JMenu();
         itemAgregarCasting = new javax.swing.JMenuItem();
         itemConsultarCasting = new javax.swing.JMenuItem();
@@ -70,6 +67,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         itemReportesCastingPorCosto = new javax.swing.JMenu();
         jMenuItem25 = new javax.swing.JMenuItem();
         itemReportesCastingPorTipo = new javax.swing.JMenuItem();
+        itemAgregarClientes = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        itemConsultarClientes = new javax.swing.JMenuItem();
+        itemEditarClientes = new javax.swing.JMenuItem();
+        itemEliminarClientes = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        jMenu6 = new javax.swing.JMenu();
+        itemReportesClientePorNombre = new javax.swing.JMenuItem();
+        itemReportesClientePorActividad = new javax.swing.JMenuItem();
         itemAcercaDeAyuda = new javax.swing.JMenu();
         jMenuItem27 = new javax.swing.JMenuItem();
 
@@ -173,74 +179,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         BarraMenu.add(menuUsuarios);
 
-        itemAgregarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/clienteMenu.png"))); // NOI18N
-        itemAgregarClientes.setText("Cliente");
-        itemAgregarClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        jMenuItem9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/agregarUsuario.png"))); // NOI18N
-        jMenuItem9.setText("Agregar Clientes...");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
-            }
-        });
-        itemAgregarClientes.add(jMenuItem9);
-
-        itemConsultarClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        itemConsultarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/consultarDatosUsuario.png"))); // NOI18N
-        itemConsultarClientes.setText("Consultar Clientes...");
-        itemConsultarClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itemConsultarClientesActionPerformed(evt);
-            }
-        });
-        itemAgregarClientes.add(itemConsultarClientes);
-
-        itemEditarClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        itemEditarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/editarUsuario.png"))); // NOI18N
-        itemEditarClientes.setText("Editar Clientes...");
-        itemEditarClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itemEditarClientesActionPerformed(evt);
-            }
-        });
-        itemAgregarClientes.add(itemEditarClientes);
-
-        itemEliminarClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        itemEliminarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/eliminarUsuario.png"))); // NOI18N
-        itemEliminarClientes.setText("Eliminar Clientes...");
-        itemAgregarClientes.add(itemEliminarClientes);
-        itemAgregarClientes.add(jSeparator2);
-
-        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/reportesUsuario.png"))); // NOI18N
-        jMenu6.setText("Reportes...");
-        jMenu6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        itemReportesClientePorNombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        itemReportesClientePorNombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/reportesUsuario.png"))); // NOI18N
-        itemReportesClientePorNombre.setText("Por nombre...");
-        itemReportesClientePorNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itemReportesClientePorNombreActionPerformed(evt);
-            }
-        });
-        jMenu6.add(itemReportesClientePorNombre);
-
-        itemReportesClientePorActividad.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        itemReportesClientePorActividad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/reportesUsuario.png"))); // NOI18N
-        itemReportesClientePorActividad.setText("Por Tipo de Actividad..");
-        itemReportesClientePorActividad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itemReportesClientePorActividadActionPerformed(evt);
-            }
-        });
-        jMenu6.add(itemReportesClientePorActividad);
-
-        itemAgregarClientes.add(jMenu6);
-
-        BarraMenu.add(itemAgregarClientes);
-
         menuCandidato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/candidatoMenu.png"))); // NOI18N
         menuCandidato.setText("Candidato");
         menuCandidato.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -280,6 +218,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         itemReportesCandidatoPorNombres.setText("Reportes...");
         itemReportesCandidatoPorNombres.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        itemReportesCandidatoTodos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        itemReportesCandidatoTodos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/reportesUsuario.png"))); // NOI18N
+        itemReportesCandidatoTodos.setText("Todos...");
+        itemReportesCandidatoTodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemReportesCandidatoTodosActionPerformed(evt);
+            }
+        });
+        itemReportesCandidatoPorNombres.add(itemReportesCandidatoTodos);
+
         jMenuItem19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jMenuItem19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/reportesUsuario.png"))); // NOI18N
         jMenuItem19.setText("Por nombre...");
@@ -299,16 +247,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
         itemReportesCandidatoPorNombres.add(itemReportesCandidatoPorEdad);
-
-        itemReportesCandidatoPorEspecialidad.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        itemReportesCandidatoPorEspecialidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/reportesUsuario.png"))); // NOI18N
-        itemReportesCandidatoPorEspecialidad.setText("Por Especialidad...");
-        itemReportesCandidatoPorEspecialidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itemReportesCandidatoPorEspecialidadActionPerformed(evt);
-            }
-        });
-        itemReportesCandidatoPorNombres.add(itemReportesCandidatoPorEspecialidad);
 
         menuCandidato.add(itemReportesCandidatoPorNombres);
 
@@ -377,6 +315,74 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         BarraMenu.add(menuCasting);
 
+        itemAgregarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/clienteMenu.png"))); // NOI18N
+        itemAgregarClientes.setText("Cliente");
+        itemAgregarClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        jMenuItem9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/agregarUsuario.png"))); // NOI18N
+        jMenuItem9.setText("Agregar Clientes...");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        itemAgregarClientes.add(jMenuItem9);
+
+        itemConsultarClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        itemConsultarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/consultarDatosUsuario.png"))); // NOI18N
+        itemConsultarClientes.setText("Consultar Clientes...");
+        itemConsultarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemConsultarClientesActionPerformed(evt);
+            }
+        });
+        itemAgregarClientes.add(itemConsultarClientes);
+
+        itemEditarClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        itemEditarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/editarUsuario.png"))); // NOI18N
+        itemEditarClientes.setText("Editar Clientes...");
+        itemEditarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemEditarClientesActionPerformed(evt);
+            }
+        });
+        itemAgregarClientes.add(itemEditarClientes);
+
+        itemEliminarClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        itemEliminarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/eliminarUsuario.png"))); // NOI18N
+        itemEliminarClientes.setText("Eliminar Clientes...");
+        itemAgregarClientes.add(itemEliminarClientes);
+        itemAgregarClientes.add(jSeparator2);
+
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/reportesUsuario.png"))); // NOI18N
+        jMenu6.setText("Reportes...");
+        jMenu6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        itemReportesClientePorNombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        itemReportesClientePorNombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/reportesUsuario.png"))); // NOI18N
+        itemReportesClientePorNombre.setText("Por nombre...");
+        itemReportesClientePorNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemReportesClientePorNombreActionPerformed(evt);
+            }
+        });
+        jMenu6.add(itemReportesClientePorNombre);
+
+        itemReportesClientePorActividad.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        itemReportesClientePorActividad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/reportesUsuario.png"))); // NOI18N
+        itemReportesClientePorActividad.setText("Por Tipo de Actividad..");
+        itemReportesClientePorActividad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemReportesClientePorActividadActionPerformed(evt);
+            }
+        });
+        jMenu6.add(itemReportesClientePorActividad);
+
+        itemAgregarClientes.add(jMenu6);
+
+        BarraMenu.add(itemAgregarClientes);
+
         itemAcercaDeAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/ayudaMenu.png"))); // NOI18N
         itemAcercaDeAyuda.setText("Ayuda");
         itemAcercaDeAyuda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -407,7 +413,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addGap(0, 13, Short.MAX_VALUE))
         );
 
         pack();
@@ -459,7 +465,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_itemReportesClientePorActividadActionPerformed
 
     private void itemAgregarCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAgregarCandidatoActionPerformed
-        // TODO add your handling code here:
+      
+        VentanaCandidato ventana = new VentanaCandidato(this, true);
+        ventana.setLocationRelativeTo(this);
+        ventana.setVisible(true);
+        
     }//GEN-LAST:event_itemAgregarCandidatoActionPerformed
 
     private void itemEditarCandidatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEditarCandidatosActionPerformed
@@ -474,9 +484,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_itemReportesCandidatoPorEdadActionPerformed
 
-    private void itemReportesCandidatoPorEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemReportesCandidatoPorEspecialidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itemReportesCandidatoPorEspecialidadActionPerformed
+    private void itemReportesCandidatoTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemReportesCandidatoTodosActionPerformed
+        
+           
+     if(Candidato.candidatosBD == null || Candidato.candidatosBD.isEmpty()){
+        JOptionPane.showMessageDialog(this, "No existen candidatos en el sistema", 
+                "Resultado Negativo", JOptionPane.WARNING_MESSAGE);
+        return;
+                
+        }
+        
+     VentanaReporteCandidatos ventana = new VentanaReporteCandidatos(this,true);
+     ventana.setLocationRelativeTo(this);
+     ventana.setVisible(true);
+        
+        
+    }//GEN-LAST:event_itemReportesCandidatoTodosActionPerformed
 
     private void itemAgregarCastingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAgregarCastingActionPerformed
         // TODO add your handling code here:
@@ -590,8 +613,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemEliminarUsuario;
     private javax.swing.JMenuItem itemIniciarSesionUsuarios;
     private javax.swing.JMenuItem itemReportesCandidatoPorEdad;
-    private javax.swing.JMenuItem itemReportesCandidatoPorEspecialidad;
     private javax.swing.JMenu itemReportesCandidatoPorNombres;
+    private javax.swing.JMenuItem itemReportesCandidatoTodos;
     private javax.swing.JMenu itemReportesCastingPorCosto;
     private javax.swing.JMenuItem itemReportesCastingPorTipo;
     private javax.swing.JMenuItem itemReportesClientePorActividad;

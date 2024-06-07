@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package marianorolong.Ventanas;
+package marianorolong.Ventanas.Usuarios;
 
 import java.util.HashMap;
 import javax.swing.JOptionPane;
@@ -66,6 +66,12 @@ public class VentanaUsuarios extends javax.swing.JDialog {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Nombre:");
 
+        campoNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoNombreActionPerformed(evt);
+            }
+        });
+
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Apellido:");
@@ -93,6 +99,12 @@ public class VentanaUsuarios extends javax.swing.JDialog {
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Identificación:");
+
+        campoIdentificacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoIdentificacionActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -363,7 +375,7 @@ public class VentanaUsuarios extends javax.swing.JDialog {
     }
     
     else{
-        //buscar el usuario en el diccionario a partir de la cedula
+        //buscar el usuario en el diccionario a partir de la identificacion
     if(Persona.usuariosBD.containsKey(identificacion)){
         this.usuario = Persona.usuariosBD.get(identificacion);
         campoNombre.setText(this.usuario.nombre);
@@ -460,6 +472,14 @@ public class VentanaUsuarios extends javax.swing.JDialog {
     private void campoDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDireccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoDireccionActionPerformed
+
+    private void campoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoNombreActionPerformed
+
+    private void campoIdentificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoIdentificacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoIdentificacionActionPerformed
 
     /**
      * @param args the command line arguments

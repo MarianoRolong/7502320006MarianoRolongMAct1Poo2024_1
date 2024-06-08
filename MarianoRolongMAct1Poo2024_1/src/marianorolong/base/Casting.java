@@ -4,6 +4,7 @@
  */
 package marianorolong.base;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 /**
  *
@@ -12,26 +13,39 @@ import java.util.List;
 public class Casting {
     //PROPIEDADES
     private int id;
-    private String codigoCasting;
-    private String nombre; 
-    private String descripcion;
-    private Date fechaContratacion; 
-    private int costo; 
-    private String tipo; 
-    private Cliente cliente;
+    public String codigoCasting;
+    public String nombre; 
+    public String descripcion;
+    public Date fechaContratacion; 
+    public String costo; 
+    public String tipo; 
+    public String numeroPersonasRequeridas; 
+    public Cliente cliente;
+    public static HashMap<String, Casting> castingsBD;
+
+    public String getNumeroPersonasRequeridas() {
+        return numeroPersonasRequeridas;
+    }
+
+    public void setNumeroPersonasRequeridas(String numeroPersonasRequeridas) {
+        this.numeroPersonasRequeridas = numeroPersonasRequeridas;
+    }
+
+    
     private List<Candidato> candidatos;
 //CONSTRUCTORES
     public Casting (){
     
     }
 
-    public Casting(String codigoCasting, String nombre, String descripcion, Date fechaContratacion, int costo, String tipo, Cliente cliente, Candidato candidatos) {
+    public Casting(String codigoCasting, String nombre, String descripcion, Date fechaContratacion, String costo, String tipo, String numeroPersonasRequeridas, Cliente cliente, Candidato candidatos) {
         this.codigoCasting = codigoCasting;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fechaContratacion = fechaContratacion;
         this.costo = costo;
         this.tipo = tipo;
+        this.numeroPersonasRequeridas = numeroPersonasRequeridas;
         this.cliente = cliente;
         this.candidatos.add(candidatos);
     }
@@ -65,13 +79,15 @@ public class Casting {
         this.fechaContratacion = fechaContratacion;
     }
 
-    public int getCosto() {
+    public String getCosto() {
         return costo;
     }
-    
-    public void setCosto(int costo) {
+
+    public void setCosto(String costo) {
         this.costo = costo;
     }
+
+   
 
     public String getTipo() {
         return tipo;

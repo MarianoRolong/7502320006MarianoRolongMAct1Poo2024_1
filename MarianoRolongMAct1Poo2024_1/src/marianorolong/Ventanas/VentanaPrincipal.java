@@ -7,9 +7,11 @@ package marianorolong.Ventanas;
 import marianorolong.Ventanas.Usuarios.VentanaUsuarios;
 import marianorolong.Ventanas.Usuarios.VentanaLogin;
 import marianorolong.Ventanas.Usuarios.VentanaReporteUsuarios;
-import marianorolong.Ventanas.Candidatos.VentanaCandidato;
+import marianorolong.Ventanas.Candidatos.VentanaCandidatos;
 import javax.swing.JOptionPane;
 import marianorolong.Ventanas.Candidatos.VentanaReporteCandidatos;
+import marianorolong.Ventanas.Castings.VentanaCasting;
+import marianorolong.Ventanas.Castings.VentanaReporteCastings;
 import marianorolong.base.Candidato;
 import marianorolong.base.Persona;
 
@@ -65,8 +67,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         itemEliminarCasting = new javax.swing.JMenuItem();
         jSeparator4 = new javax.swing.JPopupMenu.Separator();
         itemReportesCastingPorCosto = new javax.swing.JMenu();
-        jMenuItem25 = new javax.swing.JMenuItem();
         itemReportesCastingPorTipo = new javax.swing.JMenuItem();
+        jMenuItem25 = new javax.swing.JMenuItem();
         itemAgregarClientes = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         itemConsultarClientes = new javax.swing.JMenuItem();
@@ -94,6 +96,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/usuarioMenu.png"))); // NOI18N
         menuUsuarios.setText("Usuario");
         menuUsuarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        menuUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuUsuariosActionPerformed(evt);
+            }
+        });
 
         itemIniciarSesionUsuarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         itemIniciarSesionUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/key.png"))); // NOI18N
@@ -291,6 +298,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         itemReportesCastingPorCosto.setText("Reportes...");
         itemReportesCastingPorCosto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        itemReportesCastingPorTipo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        itemReportesCastingPorTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/reportesUsuario.png"))); // NOI18N
+        itemReportesCastingPorTipo.setText("Todos..");
+        itemReportesCastingPorTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemReportesCastingPorTipoActionPerformed(evt);
+            }
+        });
+        itemReportesCastingPorCosto.add(itemReportesCastingPorTipo);
+
         jMenuItem25.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jMenuItem25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/reportesUsuario.png"))); // NOI18N
         jMenuItem25.setText("Por Costo..");
@@ -300,16 +317,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
         itemReportesCastingPorCosto.add(jMenuItem25);
-
-        itemReportesCastingPorTipo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        itemReportesCastingPorTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/reportesUsuario.png"))); // NOI18N
-        itemReportesCastingPorTipo.setText("Por Tipo..");
-        itemReportesCastingPorTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itemReportesCastingPorTipoActionPerformed(evt);
-            }
-        });
-        itemReportesCastingPorCosto.add(itemReportesCastingPorTipo);
 
         menuCasting.add(itemReportesCastingPorCosto);
 
@@ -466,7 +473,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void itemAgregarCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAgregarCandidatoActionPerformed
       
-        VentanaCandidato ventana = new VentanaCandidato(this, true);
+        VentanaCandidatos ventana = new VentanaCandidatos(this, true);
         ventana.setLocationRelativeTo(this);
         ventana.setVisible(true);
         
@@ -502,7 +509,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_itemReportesCandidatoTodosActionPerformed
 
     private void itemAgregarCastingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAgregarCastingActionPerformed
-        // TODO add your handling code here:
+        
+        VentanaCasting ventana = new VentanaCasting(this, true);
+    ventana.setLocationRelativeTo(this);
+    ventana.setVisible(true);
     }//GEN-LAST:event_itemAgregarCastingActionPerformed
 
     private void itemEditarCastingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEditarCastingActionPerformed
@@ -514,7 +524,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem25ActionPerformed
 
     private void itemReportesCastingPorTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemReportesCastingPorTipoActionPerformed
-        // TODO add your handling code here:
+
+
+        VentanaReporteCastings ventana = new VentanaReporteCastings(this, true);
+    ventana.setLocationRelativeTo(this);
+    ventana.setVisible(true);
+        
     }//GEN-LAST:event_itemReportesCastingPorTipoActionPerformed
 
     private void itemConsultarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemConsultarUsuariosActionPerformed
@@ -555,6 +570,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_formWindowOpened
+
+    private void menuUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuUsuariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuUsuariosActionPerformed
 
     /**
      * @param args the command line arguments

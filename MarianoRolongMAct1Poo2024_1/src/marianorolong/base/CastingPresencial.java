@@ -13,7 +13,7 @@ import java.util.List;
 public class CastingPresencial {
     //PROPIEDADES
    private int id;
-   private int numeroPersonasRequeridas; 
+   //private int numeroPersonasRequeridas; 
    private AgenteCasting agenteCasting;
    private List<Fase> fases;  
 //CONSTRUCTORES
@@ -21,11 +21,11 @@ public class CastingPresencial {
     
     }
 
-    public CastingPresencial(int numeroPersonasRequeridas, AgenteCasting agenteCasting, Fase fases) {
+    /*public CastingPresencial(int numeroPersonasRequeridas, AgenteCasting agenteCasting, Fase fases) {
         this.numeroPersonasRequeridas = numeroPersonasRequeridas;
         this.agenteCasting = agenteCasting;
         this.fases.add(fases);
-    }
+    }*/
 
     public int getId() {
         return id;
@@ -35,12 +35,12 @@ public class CastingPresencial {
         this.id = id;
     }
 
-    public int getNumeroPersonasRequeridas() {
+    /*public int getNumeroPersonasRequeridas() {
         return numeroPersonasRequeridas;
     }
     public void setNumeroPersonasRequeridas(int numeroPersonasRequeridas) {
         this.numeroPersonasRequeridas = numeroPersonasRequeridas;
-    }
+    }*/
 
     public AgenteCasting getAgenteCasting() {
         return agenteCasting;
@@ -52,7 +52,7 @@ public class CastingPresencial {
 
     @Override
     public String toString() {
-        return "CastingPresencial{" + "\n NumeroPersonasRequeridas: " + numeroPersonasRequeridas + '}';
+        return "CastingPresencial{" + "\n NumeroPersonasRequeridas: " + /*numeroPersonasRequeridas*/ +'}';
     }
 
     

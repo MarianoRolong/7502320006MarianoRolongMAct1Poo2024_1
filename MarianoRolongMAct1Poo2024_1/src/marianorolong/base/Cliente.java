@@ -13,15 +13,17 @@ import java.util.List;
 public class Cliente {
     //PROPIEDADES
     private int id;
-    private String codigoCliente; 
-    private String nombre;
-    private String direccion; 
-    private String telefono;
-    private String personaContacto;
-    private String tipoDeActividad;
-    private List<Casting> castings;
-    private Agencia agencia;
-    private Persona persona;
+    public String codigoCliente; 
+    public String nombre;
+    public String direccion; 
+    public String telefono;
+    public String personaContacto;
+    public String tipoDeActividad;
+    public List<Casting> castings;
+    public Agencia agencia;
+    public Persona persona;
+    public Casting casting;
+    
 
 //CONSTRUCTORES
     public Cliente (){

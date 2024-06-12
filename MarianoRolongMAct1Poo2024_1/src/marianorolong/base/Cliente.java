@@ -4,6 +4,7 @@
  */
 package marianorolong.base;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -23,6 +24,7 @@ public class Cliente {
     public Agencia agencia;
     public Persona persona;
     public Casting casting;
+    public static HashMap<String, Cliente> clientesBD;
     
 
 //CONSTRUCTORES

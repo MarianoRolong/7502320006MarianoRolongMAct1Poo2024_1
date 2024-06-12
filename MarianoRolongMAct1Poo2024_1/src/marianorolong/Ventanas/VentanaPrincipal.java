@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
 import marianorolong.Ventanas.Candidatos.VentanaReporteCandidatos;
 import marianorolong.Ventanas.Castings.VentanaCasting;
 import marianorolong.Ventanas.Castings.VentanaReporteCastings;
+import marianorolong.Ventanas.Cliente.VentanaClientes;
+import marianorolong.Ventanas.Cliente.VentanaReporteClientes;
 import marianorolong.base.Candidato;
 import marianorolong.base.Persona;
 
@@ -368,7 +370,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         itemReportesClientePorNombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         itemReportesClientePorNombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marianorolong/Ventanas/iconos/reportesUsuario.png"))); // NOI18N
-        itemReportesClientePorNombre.setText("Por nombre...");
+        itemReportesClientePorNombre.setText("Todos...");
         itemReportesClientePorNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 itemReportesClientePorNombreActionPerformed(evt);
@@ -456,7 +458,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_itemReportesUsuarioPorTelefonoActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        // TODO add your handling code here:
+
+
+    VentanaClientes ventana = new VentanaClientes(this, true);
+    ventana.setLocationRelativeTo(this);
+    ventana.setVisible(true);
+
+        
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void itemEditarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEditarClientesActionPerformed
@@ -464,7 +472,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_itemEditarClientesActionPerformed
 
     private void itemReportesClientePorNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemReportesClientePorNombreActionPerformed
-        // TODO add your handling code here:
+        
+        
+         VentanaReporteClientes ventana = new VentanaReporteClientes(this, true);
+    ventana.setLocationRelativeTo(this);
+    ventana.setVisible(true);
+
+        
+        
+        
     }//GEN-LAST:event_itemReportesClientePorNombreActionPerformed
 
     private void itemReportesClientePorActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemReportesClientePorActividadActionPerformed
